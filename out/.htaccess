@@ -1,0 +1,20 @@
+<IfModule mod_rewrite.c>
+  RewriteEngine On
+  RewriteBase /
+
+  # Serve index.html as the default index file
+  DirectoryIndex index.html
+
+  # If a directory is requested without a trailing slash, add the slash to prevent 403 Forbidden
+  RewriteCond %{REQUEST_FILENAME} -d
+  RewriteRule ^(.*[^/])$ /$1/ [L,R=301]
+
+  # If the requested file doesn't exist, check if a .html file exists with that name
+  RewriteCond %{REQUEST_FILENAME} !-f
+  RewriteCond %{REQUEST_FILENAME} !-d
+  RewriteCond %{REQUEST_FILENAME}.html -f
+  RewriteRule ^(.*)$ $1.html [L]
+</IfModule>
+
+# Handle 404 Not Found errors using Next.js generated 404 page
+ErrorDocument 404 /404.html
