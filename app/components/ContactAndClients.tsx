@@ -1,6 +1,5 @@
 "use client";
 
-import { motion } from "framer-motion";
 import Image from "next/image";
 
 // --- CLIENT LOGO DATA ---
@@ -41,21 +40,19 @@ export default function ContactAndClients() {
       </div>
 
       {/* SCROLLING STRIP */}
-      <div className="relative w-full py-4 z-10 flex overflow-hidden">
+      <div className="relative w-full py-4 z-10 flex overflow-hidden marquee-container group">
         {/* Gradients to fade edges smoothly */}
         <div className="absolute top-0 left-0 w-16 sm:w-32 md:w-64 h-full z-10 bg-gradient-to-r from-white to-transparent pointer-events-none" />
         <div className="absolute top-0 right-0 w-16 sm:w-32 md:w-64 h-full z-10 bg-gradient-to-l from-white to-transparent pointer-events-none" />
 
-        {/* Smooth Infinite Moving Track */}
-        <motion.div
-          className="flex gap-6 sm:gap-10 md:gap-16 pr-6 sm:pr-10 md:pr-16 items-center w-max will-change-transform"
-          animate={{ x: ["0%", "-50%"] }}
-          transition={{ duration: 40, ease: "linear", repeat: Infinity }}
+        {/* Smooth Infinite Moving Track (Pauses seamlessly on hover) */}
+        <div
+          className="marquee-track flex gap-6 sm:gap-10 md:gap-16 pr-6 sm:pr-10 md:pr-16 items-center will-change-transform"
         >
           {[...clients, ...clients, ...clients, ...clients].map((client, index) => (
             <LogoItem key={index} data={client} />
           ))}
-        </motion.div>
+        </div>
       </div>
     </section>
   );

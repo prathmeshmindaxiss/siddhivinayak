@@ -37,8 +37,9 @@ export default function ServiceDetailClient({ slug }: { slug: string }) {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
+            className="text-center mt-6 sm:mt-8"
           >
-            <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-black text-white leading-tight">
+            <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-black text-white leading-tight text-center">
               {service.title}
             </h1>
           </motion.div>

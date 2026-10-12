@@ -1,28 +1,42 @@
 "use client";
+
 import Image from "next/image";
-import { MapPin, Phone, Mail, User, FileText, Settings, Fan, Zap, CheckCircle2, Code, Facebook, Instagram, Linkedin, Youtube, Star, ExternalLink } from "lucide-react";
-import { motion } from "framer-motion";
 import Link from "next/link";
+import { 
+  MapPin, 
+  Phone, 
+  Mail, 
+  Clock, 
+  Star, 
+  ExternalLink,
+  Facebook, 
+  Instagram, 
+  Linkedin, 
+  Youtube,
+  MessageCircle,
+  Settings,
+  Fan
+} from "lucide-react";
+import { motion } from "framer-motion";
 
 export default function Footer() {
-
   const quickLinks = [
-    { name: 'Home', href: '/' },
-    { name: 'About', href: '/about' },
-    { name: 'Infrastructure', href: '/infrastructure' },
-    { name: 'Products & Services', href: '/services' },
-    { name: 'Contact', href: '/contact' },
+    { name: "Home", href: "/" },
+    { name: "About Us", href: "/about" },
+    { name: "Products", href: "/services" },
+    { name: "Gallery", href: "/gallery" },
+    { name: "Infrastructure", href: "/infrastructure" },
+    { name: "Contact", href: "/contact" },
   ];
 
   return (
     <footer className="relative bg-[#050A14] text-white pt-16 sm:pt-20 pb-8 overflow-hidden border-t-4 border-[#F58220]">
-
-      {/* --- 1. INDUSTRIAL BACKGROUND --- */}
+      {/* --- 1. ORIGINAL INDUSTRIAL DARK BACKGROUND (GEARS & AMBIENT GLOWS) --- */}
       <div className="absolute inset-0 z-0 pointer-events-none overflow-hidden">
-        <div className="absolute inset-0 bg-[linear-gradient(to_right,#1f2937_1px,transparent_1px),linear-gradient(to_bottom,#1f2937_1px,transparent_1px)] bg-[size:40px_40px] opacity-20"></div>
+        <div className="absolute inset-0 bg-[linear-gradient(to_right,#1f2937_1px,transparent_1px),linear-gradient(to_bottom,#1f2937_1px,transparent_1px)] bg-[size:40px_40px] opacity-20" />
 
-        <div className="absolute -top-40 -right-40 w-[600px] h-[600px] bg-[#F58220] rounded-full blur-[200px] opacity-10"></div>
-        <div className="absolute bottom-0 left-0 w-[400px] h-[400px] bg-[#DA291C] rounded-full blur-[150px] opacity-10"></div>
+        <div className="absolute -top-40 -right-40 w-[600px] h-[600px] bg-[#F58220] rounded-full blur-[200px] opacity-10" />
+        <div className="absolute bottom-0 left-0 w-[400px] h-[400px] bg-[#DA291C] rounded-full blur-[150px] opacity-10" />
 
         <motion.div
           animate={{ rotate: 360 }}
@@ -49,28 +63,42 @@ export default function Footer() {
         </motion.div>
       </div>
 
-      <div className="max-w-7xl mx-auto px-6 relative z-10">
-
-        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-10 mb-10 sm:mb-12">
-
-          {/* Brand Info */}
-          <div className="space-y-4">
-            <div className="bg-white/5 p-3.5 rounded-xl border border-white/10 backdrop-blur-sm inline-block shadow-[0_0_20px_rgba(0,0,0,0.5)]">
+      <div className="max-w-[95rem] mx-auto px-4 sm:px-6 lg:px-12 relative z-10">
+        {/* --- 2. MAIN 3-COLUMN CONTENT (MATCHING SCREENSHOT LAYOUT) --- */}
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-8 lg:gap-12 mb-10 sm:mb-14">
+          
+          {/* COLUMN 1: BRAND LOGO + ABOUT + SOCIALS (lg:col-span-5) */}
+          <div className="lg:col-span-5 space-y-4 sm:space-y-5">
+            <Link 
+              href="/" 
+              className="inline-flex items-center gap-3 bg-white/5 p-3 sm:p-3.5 rounded-xl border border-white/10 backdrop-blur-sm shadow-[0_0_20px_rgba(0,0,0,0.5)] hover:border-[#F58220]/40 transition-colors group"
+            >
               <Image
                 src="/Logo_Siddhivinayak_Engg_-_Copy.jpg-removebg-preview.png"
                 alt="Siddhivinayak Engineering Logo"
                 width={190}
                 height={75}
-                className="h-12 w-auto object-contain"
+                className="h-11 sm:h-12 w-auto object-contain shrink-0"
               />
-            </div>
-            <p className="text-slate-200 text-sm sm:text-base leading-relaxed border-l-4 border-[#F58220] pl-3.5 font-normal">
-              Advanced Engineering Solutions. Specializing in Fixtures, Robotics & Automation since 2016.
+              <div className="flex flex-col justify-center leading-tight select-none pr-1">
+                <span className="font-black tracking-tight text-white text-base sm:text-lg uppercase group-hover:text-[#F58220] transition-colors">
+                  Siddhivinayak
+                </span>
+                <span className="font-extrabold tracking-[2px] text-[#F58220] text-[10px] sm:text-[11px] uppercase">
+                  Engineering
+                </span>
+              </div>
+            </Link>
+
+            <p className="text-slate-300 text-sm sm:text-[15px] leading-relaxed max-w-md border-l-4 border-[#F58220] pl-3.5 font-normal">
+              Pune Based precision engineering specialist. Supplying Jigs, BIW & Welding Fixtures, CNC/VMC Machined Components, SPM Machines, and Heavy Structural Fabrications since 2016.
             </p>
 
-            {/* Social Media Icons */}
+            {/* Social Media Links */}
             <div className="pt-1">
-              <p className="text-xs text-slate-300 uppercase tracking-widest font-bold mb-2.5">Connect With Us</p>
+              <p className="text-xs text-slate-400 uppercase tracking-widest font-bold mb-2.5">
+                Connect With Us
+              </p>
               <div className="flex items-center gap-2.5">
                 <a
                   href="https://facebook.com"
@@ -112,84 +140,103 @@ export default function Footer() {
             </div>
           </div>
 
-          {/* Quick Links */}
-          <div className="lg:pl-6">
-            <h4 className="text-[#F58220] font-bold uppercase tracking-[2.5px] mb-4 text-sm sm:text-base flex items-center gap-2">
-              <Zap size={16} /> Quick Links
-            </h4>
-            <ul className="space-y-2.5">
+          {/* COLUMN 2: QUICK LINKS (lg:col-span-3) */}
+          <div className="lg:col-span-3">
+            <h3 className="text-[#F58220] font-bold uppercase tracking-[2.5px] mb-4 text-sm sm:text-base flex items-center gap-2">
+              Quick Links
+            </h3>
+            <ul className="space-y-3">
               {quickLinks.map((item) => (
                 <li key={item.name}>
                   <Link
                     href={item.href}
-                    className="flex items-center gap-2.5 text-slate-200 hover:text-white transition-all group text-sm sm:text-[15px]"
+                    className="group inline-flex items-center gap-2.5 text-slate-300 hover:text-white font-medium text-sm sm:text-[15px] transition-all"
                   >
-                    <span className="w-1.5 h-1.5 bg-[#475569] group-hover:bg-[#F58220] rounded-full transition-colors"></span>
-                    <span className="font-medium group-hover:translate-x-1 transition-transform">
-                      {item.name}
+                    <span className="text-[#F58220] font-black group-hover:translate-x-1 transition-transform">
+                      &gt;
                     </span>
+                    <span>{item.name}</span>
                   </Link>
                 </li>
               ))}
             </ul>
           </div>
 
-          {/* Address */}
-          <div>
-            <h4 className="text-[#F58220] font-bold uppercase tracking-[2.5px] mb-4 text-sm sm:text-base flex items-center gap-2">
-              <MapPin size={16} /> Factory Loc.
-            </h4>
-            <div className="group">
-              <span className="text-sm sm:text-[15px] text-slate-200 leading-relaxed font-mono font-medium block">
-                Sr. No. 15/1,<br />
-                Near Hindustan Pressing,<br />
-                Gulave Vasti, MIDC,<br />
-                Bhosari, Pune – 411 026
-              </span>
-            </div>
-          </div>
-
-          {/* Contact Person Card */}
-          <div>
-            <h4 className="text-[#F58220] font-bold uppercase tracking-[2.5px] mb-4 text-sm sm:text-base flex items-center gap-2">
-              <User size={16} /> Contact Info
-            </h4>
-
-            <motion.div
-              whileHover={{ y: -4 }}
-              className="bg-gradient-to-br from-[#1F2937] to-[#0B1120] p-4 sm:p-5 rounded-xl border-t-2 border-[#F58220] shadow-xl relative overflow-hidden group"
-            >
-              <div className="flex items-center gap-3 mb-3.5">
-                <div className="w-10 h-10 rounded-full bg-[#F58220] flex items-center justify-center text-white text-base font-bold shadow-md">
-                  VK
+          {/* COLUMN 3: CONTACT US (lg:col-span-4) */}
+          <div className="lg:col-span-4">
+            <h3 className="text-[#F58220] font-bold uppercase tracking-[2.5px] mb-4 text-sm sm:text-base flex items-center gap-2">
+              Contact Us
+            </h3>
+            <ul className="space-y-3.5">
+              {/* Address */}
+              <li className="flex items-start gap-3">
+                <div className="w-8 h-8 rounded-lg bg-white/5 text-[#F58220] flex items-center justify-center shrink-0 mt-0.5 border border-white/10">
+                  <MapPin size={17} />
                 </div>
-                <div>
-                  <h5 className="font-bold text-slate-100 text-sm sm:text-base">Mr. Vinod Kawade</h5>
-                  <p className="text-[11px] text-[#F58220] uppercase tracking-wider font-bold">Director</p>
-                </div>
-              </div>
+                <span className="text-slate-300 text-sm leading-relaxed font-medium">
+                  Sr. No. 15/1, Near Hindustan Pressing, Gulave Vasti, MIDC, Bhosari, Pune – 411 026
+                </span>
+              </li>
 
-              <div className="space-y-2">
-                <a href="tel:+917776965955" className="flex items-center gap-2.5 text-xs sm:text-sm text-slate-200 hover:text-white transition-colors bg-black/30 p-2 rounded hover:bg-[#F58220]/20">
-                  <Phone size={14} className="text-[#F58220]" /> +91 77769 65955
+              {/* Phone 1 */}
+              <li className="flex items-center gap-3">
+                <div className="w-8 h-8 rounded-lg bg-white/5 text-[#F58220] flex items-center justify-center shrink-0 border border-white/10">
+                  <Phone size={15} />
+                </div>
+                <a
+                  href="tel:+917776965955"
+                  className="text-slate-200 hover:text-[#F58220] font-medium text-sm transition-colors"
+                >
+                  +91 77769 65955
                 </a>
-                <a href="tel:+917972133512" className="flex items-center gap-2.5 text-xs sm:text-sm text-slate-200 hover:text-white transition-colors bg-black/30 p-2 rounded hover:bg-[#F58220]/20">
-                  <Phone size={14} className="text-[#F58220]" /> +91 79721 33512
+              </li>
+
+              {/* WhatsApp / Phone 2 */}
+              <li className="flex items-center gap-3">
+                <div className="w-8 h-8 rounded-lg bg-emerald-500/10 text-emerald-400 flex items-center justify-center shrink-0 border border-emerald-500/20">
+                  <MessageCircle size={15} />
+                </div>
+                <a
+                  href="https://wa.me/917972133512?text=Hello%2C%20I%20am%20interested%20in%20your%20engineering%20services."
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-slate-200 hover:text-emerald-400 font-medium text-sm transition-colors"
+                >
+                  +91 79721 33512
                 </a>
-                <a href="mailto:siddhivinayak.engg555@gmail.com" className="flex items-center gap-2.5 text-xs sm:text-sm text-slate-200 hover:text-white transition-colors bg-black/30 p-2 rounded hover:bg-[#F58220]/20 truncate">
-                  <Mail size={14} className="text-[#F58220]" /> siddhivinayak.engg555@gmail.com
+              </li>
+
+              {/* Email */}
+              <li className="flex items-center gap-3">
+                <div className="w-8 h-8 rounded-lg bg-white/5 text-[#F58220] flex items-center justify-center shrink-0 border border-white/10">
+                  <Mail size={15} />
+                </div>
+                <a
+                  href="mailto:siddhivinayak.engg555@gmail.com"
+                  className="text-slate-200 hover:text-[#F58220] font-medium text-sm transition-colors truncate"
+                >
+                  siddhivinayak.engg555@gmail.com
                 </a>
-              </div>
-            </motion.div>
+              </li>
+
+              {/* Working Hours */}
+              <li className="flex items-center gap-3">
+                <div className="w-8 h-8 rounded-lg bg-white/5 text-[#F58220] flex items-center justify-center shrink-0 border border-white/10">
+                  <Clock size={15} />
+                </div>
+                <span className="text-slate-300 text-xs sm:text-sm font-medium">
+                  Mon–Sat: 8:30 AM – 7:30 PM (Sun: Holiday)
+                </span>
+              </li>
+            </ul>
           </div>
 
         </div>
 
-        {/* --- 2. INTERACTIVE GOOGLE MAP SECTION (Reference Style) --- */}
+        {/* --- 3. GOOGLE MAP WITH FLOATING REVIEW CARD --- */}
         <div className="mb-8 sm:mb-10 relative w-full">
-          <div className="relative w-full h-[180px] sm:h-[200px] md:h-[220px] rounded-xl sm:rounded-2xl overflow-hidden border border-white/15 shadow-xl bg-[#0B1120]">
-            
-            {/* Google Maps Iframe */}
+          <div className="relative w-full h-[190px] sm:h-[220px] md:h-[250px] rounded-xl sm:rounded-2xl overflow-hidden border border-white/15 shadow-xl bg-[#0B1120]">
+            {/* Map Iframe */}
             <iframe
               title="Siddhivinayak Engineering Location Map"
               src="https://maps.google.com/maps?q=Siddhivinayak+Engineering+Bhosari+Pune&t=&z=14&ie=UTF8&iwloc=&output=embed"
@@ -199,8 +246,8 @@ export default function Footer() {
               referrerPolicy="no-referrer-when-downgrade"
             />
 
-            {/* Floating Info & Review Card Overlay (Reference Style - Compact) */}
-            <div className="absolute top-2.5 sm:top-3 left-2.5 sm:left-3 right-2.5 sm:right-auto z-10 max-w-xl bg-[#0e1626]/90 backdrop-blur-md border border-white/15 text-white p-2.5 sm:p-3 rounded-lg sm:rounded-xl shadow-xl flex flex-col sm:flex-row sm:items-center justify-between gap-2 sm:gap-4">
+            {/* Floating Review Card Overlay */}
+            <div className="absolute top-2.5 sm:top-3 left-2.5 sm:left-3 right-2.5 sm:right-auto z-10 max-w-xl bg-[#0e1626]/95 backdrop-blur-md border border-white/15 text-white p-2.5 sm:p-3 rounded-lg sm:rounded-xl shadow-2xl flex flex-col sm:flex-row sm:items-center justify-between gap-2 sm:gap-4">
               <div className="space-y-0.5">
                 <div className="flex items-center flex-wrap gap-1.5">
                   <h4 className="font-bold text-xs sm:text-sm text-white tracking-wide">
@@ -238,19 +285,14 @@ export default function Footer() {
                 </a>
               </div>
             </div>
-
           </div>
         </div>
 
-        {/* --- 3. BOTTOM STATUS BAR --- */}
+        {/* --- 4. BOTTOM COPYRIGHT & DEVELOPER BAR --- */}
         <div className="border-t border-white/10 pt-6 flex flex-col items-center justify-center text-center gap-1.5 w-full">
-
-          {/* Line 1: Copyright */}
           <p className="text-slate-200 text-xs sm:text-sm md:text-[15px] font-medium tracking-wide">
             © 2026 Siddhivinayak Engineering. All rights reserved.
           </p>
-
-          {/* Line 2: Developer Credit */}
           <p className="text-xs sm:text-sm text-slate-400">
             Developed by{" "}
             <Link
@@ -263,7 +305,6 @@ export default function Footer() {
             </Link>
           </p>
         </div>
-
       </div>
     </footer>
   );

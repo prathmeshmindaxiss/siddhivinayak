@@ -1,10 +1,11 @@
 "use client";
 import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
+import ContactAndClients from "../components/ContactAndClients";
 import Breadcrumbs from "../components/Breadcrumbs";
 import { motion } from "framer-motion";
 import { 
-  Users, Target, Award, CheckCircle2, ArrowRight, Factory, 
+  Users, Target, Award, ArrowRight, Factory, 
   Briefcase, History, Globe, Rocket, Clock, ShieldCheck, 
   Zap, PenTool 
 } from "lucide-react";
@@ -19,17 +20,6 @@ export default function About() {
     { label: "Happy Clients", val: "100+", icon: <Award size={24}/> },
   ];
 
-  const coreAreas = [
-    "Welding Fixtures",
-    "Inspection Fixtures",
-    "BIW Fixtures",
-    "Machine Parts",
-    "Assembly Parts",
-    "Multi Utility Fixtures",
-    "Precision Job Works",
-    "Fabrication",
-    "Gauges"       
-  ];
 
   const features = [
     {
@@ -188,9 +178,25 @@ export default function About() {
          </div>
       </section>
 
-      {/* --- 3. VISION, MISSION & CORE AREAS --- */}
+      {/* --- 3. VISION, MISSION & OUR GOAL --- */}
       <section className="py-16 md:py-24 lg:py-32 bg-slate-50 border-y border-slate-200">
          <div className="max-w-[95rem] mx-auto px-4 sm:px-6 lg:px-12">
+            
+            <motion.div 
+               initial={{ opacity: 0, y: 20 }}
+               whileInView={{ opacity: 1, y: 0 }}
+               viewport={{ once: true, margin: "-50px" }}
+               transition={{ duration: 0.6 }}
+               className="text-center max-w-3xl mx-auto mb-12 md:mb-16"
+            >
+               <span className="text-[#F58220] font-bold text-xs md:text-sm tracking-[4px] md:tracking-[6px] uppercase mb-3 md:mb-4 block">
+                  Vision • Mission • Goal
+               </span>
+               <h1 className="text-3xl md:text-4xl lg:text-5xl font-black uppercase text-[#0F172A] tracking-tight">
+                  Our Purpose
+               </h1>
+            </motion.div>
+
             <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8 lg:gap-10">
                
                <motion.div 
@@ -238,16 +244,10 @@ export default function About() {
                   <div className="w-12 h-12 md:w-14 md:h-14 bg-[#F58220]/10 rounded-xl md:rounded-2xl flex items-center justify-center text-[#F58220] mb-6 md:mb-8">
                     <Target size={24} className="md:w-7 md:h-7" />
                   </div>
-                  <h3 className="text-2xl md:text-3xl font-black uppercase text-[#0F172A] mb-4 md:mb-6">Core Areas</h3>
-                  
-                  <ul className="space-y-3 md:space-y-4 flex-grow grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-1 gap-x-4">
-                     {coreAreas.map((item, i) => (
-                        <li key={i} className="flex items-start gap-3 text-slate-700 font-bold text-xs md:text-sm uppercase tracking-wide">
-                           <CheckCircle2 size={16} className="text-[#F58220] shrink-0 mt-0.5 md:mt-1 md:w-[18px] md:h-[18px]" />
-                           <span className="leading-tight">{item}</span>
-                        </li>
-                     ))}
-                  </ul>
+                  <h3 className="text-2xl md:text-3xl font-black uppercase text-[#0F172A] mb-4 md:mb-6">Our Goal</h3>
+                  <p className="text-slate-600 text-base md:text-lg font-medium leading-relaxed flex-grow">
+                    "To achieve complete customer satisfaction through zero-defect precision manufacturing, continuous technological innovation, and adhering strictly to the Cost-Quality-Time matrix."
+                  </p>
                </motion.div>
 
             </div>
@@ -292,6 +292,9 @@ export default function About() {
             </div>
         </div>
       </section>
+      
+      {/* --- 5. OUR CLIENTS --- */}
+      <ContactAndClients />
 
       <Footer />
     </main>
