@@ -159,25 +159,25 @@ export default function Navbar() {
           <div className="w-full max-w-[95rem] mx-auto px-4 sm:px-6 lg:px-6 xl:px-8 2xl:px-12 flex items-center justify-between relative h-full z-10">
 
             {/* --- 1. LOGO & COMPANY NAME --- */}
-            <Link 
-              href="/" 
-              className="z-50 flex items-center shrink-0 group mr-4 xl:mr-8 2xl:mr-10" 
+            <Link
+              href="/"
+              className="z-50 flex items-center shrink-0 group mr-4 xl:mr-8 2xl:mr-10"
               onClick={() => { setActivePath('/'); setIsOpen(false); }}
             >
-              <motion.div whileHover={{ scale: 1.02 }} transition={{ duration: 0.3 }} className="will-change-transform flex items-center gap-2 sm:gap-3 pt-0.5">
+              <motion.div whileHover={{ scale: 1.02 }} transition={{ duration: 0.3 }} className="will-change-transform flex items-center gap-2.5 sm:gap-3.5 pt-0.5">
                 <Image
                   src="/Logo_Siddhivinayak_Engg_-_Copy.jpg-removebg-preview.png"
                   alt="Siddhivinayak Engineering"
                   width={240}
                   height={100}
-                  className="w-auto object-contain h-11 sm:h-12 lg:h-12 xl:h-14"
+                  className="w-auto object-contain h-14 sm:h-16 md:h-18 lg:h-18 xl:h-20"
                   priority
                 />
                 <div className="flex flex-col justify-center leading-tight select-none">
-                  <span className="font-black tracking-tight text-[#0F172A] text-xs sm:text-sm lg:text-base xl:text-lg uppercase group-hover:text-[#F58220] transition-colors">
+                  <span className="font-black tracking-tight text-[#0F172A] text-xs sm:text-sm md:text-base lg:text-[17px] uppercase group-hover:text-[#F58220] transition-colors">
                     Siddhivinayak
                   </span>
-                  <span className="font-extrabold tracking-[1px] xl:tracking-[1.5px] text-[#F58220] text-[8px] sm:text-[9px] xl:text-[10px] uppercase">
+                  <span className="font-extrabold tracking-[1px] sm:tracking-[1.5px] lg:tracking-[2px] text-[#F58220] text-[8px] sm:text-[9px] md:text-[10px] uppercase">
                     Engineering
                   </span>
                 </div>
@@ -211,9 +211,8 @@ export default function Navbar() {
                             initial={{ opacity: 0, y: -10 }}
                             animate={{ opacity: 1, y: 0 }}
                             transition={{ delay: 0.2 + i * 0.1 }}
-                            className={`text-[11px] xl:text-[13px] 2xl:text-[14px] font-bold uppercase tracking-[0.8px] xl:tracking-[1.2px] 2xl:tracking-[1.5px] whitespace-nowrap transition-colors duration-300 will-change-transform inline-flex items-center gap-1 ${
-                              isActive ? 'text-[#F58220]' : 'text-[#0F172A] group-hover:text-[#F58220]'
-                            }`}
+                            className={`text-[13px] xl:text-[14px] font-bold uppercase tracking-[1.5px] transition-colors duration-300 will-change-transform inline-flex items-center gap-1 ${isActive ? 'text-[#F58220]' : 'text-[#0F172A] group-hover:text-[#F58220]'
+                              }`}
                           >
                             {link.name}
                             <ChevronDown
@@ -221,9 +220,8 @@ export default function Navbar() {
                               className={`transition-transform duration-300 ${dropdownOpen ? 'rotate-180 text-[#F58220]' : 'text-slate-400 group-hover:text-[#F58220]'}`}
                             />
                           </motion.span>
-                          <span className={`absolute bottom-0 h-[2.5px] bg-[#F58220] transition-all duration-300 ease-in-out ${
-                            isActive ? 'w-full left-0 rounded-full' : 'w-0 left-1/2 group-hover:w-full group-hover:left-0 rounded-full'
-                          }`}></span>
+                          <span className={`absolute bottom-0 h-[2.5px] bg-[#F58220] transition-all duration-300 ease-in-out ${isActive ? 'w-full left-0 rounded-full' : 'w-0 left-1/2 group-hover:w-full group-hover:left-0 rounded-full'
+                            }`}></span>
                         </Link>
 
                         {/* DESKTOP DROPDOWN MENU */}
@@ -322,15 +320,13 @@ export default function Navbar() {
                         initial={{ opacity: 0, y: -10 }}
                         animate={{ opacity: 1, y: 0 }}
                         transition={{ delay: 0.2 + i * 0.1 }}
-                        className={`text-[11px] xl:text-[13px] 2xl:text-[14px] font-bold uppercase tracking-[0.8px] xl:tracking-[1.2px] 2xl:tracking-[1.5px] whitespace-nowrap transition-colors duration-300 will-change-transform inline-block ${
-                          isActive ? 'text-[#F58220]' : 'text-[#0F172A] group-hover:text-[#F58220]'
-                        }`}
+                        className={`text-[13px] xl:text-[14px] font-bold uppercase tracking-[1.5px] transition-colors duration-300 will-change-transform inline-block ${isActive ? 'text-[#F58220]' : 'text-[#0F172A] group-hover:text-[#F58220]'
+                          }`}
                       >
                         {link.name}
                       </motion.span>
-                      <span className={`absolute bottom-0 h-[2.5px] bg-[#F58220] transition-all duration-300 ease-in-out ${
-                        isActive ? 'w-full left-0 rounded-full' : 'w-0 left-1/2 group-hover:w-full group-hover:left-0 rounded-full'
-                      }`}></span>
+                      <span className={`absolute bottom-0 h-[2.5px] bg-[#F58220] transition-all duration-300 ease-in-out ${isActive ? 'w-full left-0 rounded-full' : 'w-0 left-1/2 group-hover:w-full group-hover:left-0 rounded-full'
+                        }`}></span>
                     </Link>
                   );
                 })}
@@ -338,15 +334,15 @@ export default function Navbar() {
             </div>
 
             {/* --- 3. RIGHT SIDE ACTIONS (DESKTOP) --- */}
-            <div className="hidden lg:flex items-center shrink-0 ml-3 xl:ml-6">
+            <div className="hidden lg:flex items-center gap-4 xl:gap-6 shrink-0">
               <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }} className="will-change-transform">
                 <Link
                   href="/contact"
                   onClick={() => { setActivePath('/contact'); setIsOpen(false); }}
-                  className="px-3.5 xl:px-5 2xl:px-6 py-2 xl:py-2.5 bg-[#F58220] text-white text-[11px] xl:text-[12px] 2xl:text-[13px] font-black uppercase tracking-[1px] xl:tracking-[1.5px] whitespace-nowrap hover:bg-[#0F172A] hover:text-white transition-colors rounded flex items-center gap-1.5 xl:gap-2 shadow-md shadow-orange-900/10"
+                  className="px-5 xl:px-6 py-2.5 xl:py-3 bg-[#F58220] text-white text-[12px] xl:text-[13px] font-black uppercase tracking-[1.5px] hover:bg-[#0F172A] hover:text-white transition-colors rounded flex items-center gap-2 shadow-lg shadow-orange-900/10"
                 >
-                  <span>Get Quote</span>
-                  <ArrowRight size={15} />
+                  Get Quote
+                  <ArrowRight size={16} />
                 </Link>
               </motion.div>
             </div>
@@ -397,15 +393,15 @@ export default function Navbar() {
                   <Image
                     src="/Logo_Siddhivinayak_Engg_-_Copy.jpg-removebg-preview.png"
                     alt="Siddhivinayak Engineering"
-                    width={48}
-                    height={48}
-                    className="h-10 sm:h-11 w-auto object-contain shrink-0"
+                    width={56}
+                    height={56}
+                    className="h-12 sm:h-14 w-auto object-contain shrink-0"
                   />
                   <div className="flex flex-col justify-center leading-tight">
-                    <span className="font-black tracking-tight text-[#0F172A] text-sm sm:text-base uppercase">
+                    <span className="font-black tracking-tight text-[#0F172A] text-xs sm:text-sm uppercase">
                       Siddhivinayak
                     </span>
-                    <span className="font-extrabold tracking-[1.5px] sm:tracking-[2px] text-[#F58220] text-[9px] sm:text-[10px] uppercase">
+                    <span className="font-extrabold tracking-[1px] sm:tracking-[1.5px] text-[#F58220] text-[8px] sm:text-[9px] uppercase">
                       Engineering
                     </span>
                   </div>
@@ -430,11 +426,10 @@ export default function Navbar() {
                     setActivePath('/');
                     setIsOpen(false);
                   }}
-                  className={`w-full py-3.5 px-4 rounded-full border text-xs sm:text-sm font-black uppercase tracking-wider flex items-center justify-center gap-2.5 transition-all shadow-sm ${
-                    isLinkActive('/')
+                  className={`w-full py-3.5 px-4 rounded-full border text-xs sm:text-sm font-black uppercase tracking-wider flex items-center justify-center gap-2.5 transition-all shadow-sm ${isLinkActive('/')
                       ? 'bg-slate-900 text-white border-slate-900 shadow-md'
                       : 'bg-white text-slate-700 border-slate-200/90 hover:border-[#F58220] hover:text-[#F58220]'
-                  }`}
+                    }`}
                 >
                   <Home size={17} className={isLinkActive('/') ? 'text-[#F58220]' : 'text-slate-600'} />
                   <span>Home</span>
@@ -447,11 +442,10 @@ export default function Navbar() {
                     setActivePath('/about');
                     setIsOpen(false);
                   }}
-                  className={`w-full py-3.5 px-4 rounded-full border text-xs sm:text-sm font-black uppercase tracking-wider flex items-center justify-center gap-2 transition-all shadow-sm ${
-                    isLinkActive('/about')
+                  className={`w-full py-3.5 px-4 rounded-full border text-xs sm:text-sm font-black uppercase tracking-wider flex items-center justify-center gap-2 transition-all shadow-sm ${isLinkActive('/about')
                       ? 'bg-slate-900 text-white border-slate-900 shadow-md'
                       : 'bg-white text-slate-700 border-slate-200/90 hover:border-[#F58220] hover:text-[#F58220]'
-                  }`}
+                    }`}
                 >
                   <span>About Us</span>
                 </Link>
@@ -461,11 +455,10 @@ export default function Navbar() {
                   <button
                     type="button"
                     onClick={() => setMobileProductsOpen(!mobileProductsOpen)}
-                    className={`w-full py-3.5 px-4 rounded-full border text-xs sm:text-sm font-black uppercase tracking-wider flex items-center justify-center gap-2 transition-all shadow-sm ${
-                      mobileProductsOpen || isLinkActive('/services')
+                    className={`w-full py-3.5 px-4 rounded-full border text-xs sm:text-sm font-black uppercase tracking-wider flex items-center justify-center gap-2 transition-all shadow-sm ${mobileProductsOpen || isLinkActive('/services')
                         ? 'bg-[#F58220] text-white border-[#F58220] shadow-md shadow-orange-500/25'
                         : 'bg-white text-slate-700 border-slate-200/90 hover:border-[#F58220] hover:text-[#F58220]'
-                    }`}
+                      }`}
                   >
                     <span>Products</span>
                     <ChevronDown
@@ -539,11 +532,10 @@ export default function Navbar() {
                     setActivePath('/infrastructure');
                     setIsOpen(false);
                   }}
-                  className={`w-full py-3.5 px-4 rounded-full border text-xs sm:text-sm font-black uppercase tracking-wider flex items-center justify-center gap-2 transition-all shadow-sm ${
-                    isLinkActive('/infrastructure')
+                  className={`w-full py-3.5 px-4 rounded-full border text-xs sm:text-sm font-black uppercase tracking-wider flex items-center justify-center gap-2 transition-all shadow-sm ${isLinkActive('/infrastructure')
                       ? 'bg-slate-900 text-white border-slate-900 shadow-md'
                       : 'bg-white text-slate-700 border-slate-200/90 hover:border-[#F58220] hover:text-[#F58220]'
-                  }`}
+                    }`}
                 >
                   <span>Infrastructure</span>
                 </Link>
@@ -555,11 +547,10 @@ export default function Navbar() {
                     setActivePath('/gallery');
                     setIsOpen(false);
                   }}
-                  className={`w-full py-3.5 px-4 rounded-full border text-xs sm:text-sm font-black uppercase tracking-wider flex items-center justify-center gap-2 transition-all shadow-sm ${
-                    isLinkActive('/gallery')
+                  className={`w-full py-3.5 px-4 rounded-full border text-xs sm:text-sm font-black uppercase tracking-wider flex items-center justify-center gap-2 transition-all shadow-sm ${isLinkActive('/gallery')
                       ? 'bg-slate-900 text-white border-slate-900 shadow-md'
                       : 'bg-white text-slate-700 border-slate-200/90 hover:border-[#F58220] hover:text-[#F58220]'
-                  }`}
+                    }`}
                 >
                   <span>Gallery</span>
                 </Link>
@@ -571,11 +562,10 @@ export default function Navbar() {
                     setActivePath('/contact');
                     setIsOpen(false);
                   }}
-                  className={`w-full py-3.5 px-4 rounded-full border text-xs sm:text-sm font-black uppercase tracking-wider flex items-center justify-center gap-2 transition-all shadow-sm ${
-                    isLinkActive('/contact')
+                  className={`w-full py-3.5 px-4 rounded-full border text-xs sm:text-sm font-black uppercase tracking-wider flex items-center justify-center gap-2 transition-all shadow-sm ${isLinkActive('/contact')
                       ? 'bg-slate-900 text-white border-slate-900 shadow-md'
                       : 'bg-white text-slate-700 border-slate-200/90 hover:border-[#F58220] hover:text-[#F58220]'
-                  }`}
+                    }`}
                 >
                   <span>Contact</span>
                 </Link>

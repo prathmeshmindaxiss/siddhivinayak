@@ -12,19 +12,19 @@ export default function Home() {
     <main className="min-h-screen bg-white relative">
       {/* 1. Navigation */}
       <Navbar />
-      
+
       {/* 2. Hero Animation */}
       <Hero />
-      
+
       {/* 3. Brief About */}
       <HomeOverview />
-      
+
       {/* 4. Core Services List */}
       <Services />
-      
+
       {/* 5. Contact Teaser & Clients Partners */}
-      <ContactAndClients /> 
-      
+      <ContactAndClients />
+
       {/* 6. Footer */}
       <Footer />
     </main>
