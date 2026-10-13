@@ -330,7 +330,7 @@ export default function GalleryPage() {
             transition={{ duration: 0.6 }}
             className="flex flex-col items-center"
           >
-            <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-black tracking-tight leading-[1.1] text-white uppercase">
+            <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-black tracking-tight leading-[1.1] text-white">
               Industrial{" "}
               <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#F58220] via-[#FFA048] to-[#DA291C]">
                 Gallery
@@ -375,21 +375,8 @@ export default function GalleryPage() {
       </section>
 
       {/* --- 3. PHOTO GRID GALLERY --- */}
-      <section className="py-16 md:py-24 px-4 sm:px-6 lg:px-12 bg-white">
+      <section className="py-12 sm:py-16 md:py-20 px-4 sm:px-6 lg:px-12 bg-white">
         <div className="max-w-[95rem] mx-auto">
-          {/* Section Summary Header */}
-          <div className="flex flex-col items-center text-center gap-2 mb-10 pb-6 border-b border-slate-200">
-            <span className="text-[#F58220] font-bold text-xs uppercase tracking-[3px] block mb-1">
-              Portfolio Showcase
-            </span>
-            <h2 className="text-2xl sm:text-3xl md:text-4xl font-black uppercase text-[#0F172A] tracking-tight">
-              {selectedCategory}
-            </h2>
-            <p className="text-slate-500 font-bold text-sm mt-1">
-              Showing <span className="text-[#0F172A]">{filteredItems.length}</span> verified artifacts
-            </p>
-          </div>
-
           {/* Cards Grid */}
           <motion.div 
             layout

@@ -22,7 +22,7 @@ export default function HomeOverview() {
              <span className="text-[#F58220] font-bold text-xs tracking-[4px] uppercase block mb-4">
                Company Profile
              </span>
-             <h2 className="text-4xl font-bold uppercase tracking-tighter mb-6 leading-none">
+             <h2 className="text-4xl font-bold tracking-tighter mb-6 leading-none">
                Engineering <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#1B2A41] to-gray-500">Excellence</span>
              </h2>
              <p className="text-gray-600 leading-relaxed mb-6 text-lg">

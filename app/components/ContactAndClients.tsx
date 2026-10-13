@@ -26,7 +26,7 @@ export default function ContactAndClients() {
         <span className="text-orange-600 font-bold text-xs tracking-[4px] uppercase block mb-3">
           Trusted By
         </span>
-        <h2 className="text-3xl sm:text-4xl md:text-5xl font-black uppercase tracking-tight mb-6 text-slate-900">
+        <h2 className="text-3xl sm:text-4xl md:text-5xl font-black tracking-tight mb-6 text-slate-900">
           Our{" "}
           <span className="text-transparent bg-clip-text bg-gradient-to-r from-orange-500 to-orange-700">
             Clients

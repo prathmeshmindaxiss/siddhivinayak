@@ -113,9 +113,9 @@ export default function About() {
               viewport={{ once: true, margin: "-50px" }}
               transition={{ duration: 0.8 }}
             >
-               <h3 className="text-3xl md:text-4xl font-black uppercase text-[#0F172A] tracking-tight mb-8 md:mb-10 flex items-center gap-4">
+               <h3 className="text-3xl md:text-4xl font-black text-[#0F172A] tracking-tight mb-8 md:mb-10 flex items-center gap-4">
                  <span className="w-2 h-8 md:h-10 bg-[#F58220] rounded-sm"></span>
-                 OUR STORY
+                 Our Story
                </h3>
                
                {/* ✅ OUR STORY: Aapki exact line sirf yahan daali hai */}
@@ -192,9 +192,9 @@ export default function About() {
                <span className="text-[#F58220] font-bold text-xs md:text-sm tracking-[4px] md:tracking-[6px] uppercase mb-3 md:mb-4 block">
                   Vision • Mission • Goal
                </span>
-               <h1 className="text-3xl md:text-4xl lg:text-5xl font-black uppercase text-[#0F172A] tracking-tight">
+               <h2 className="text-3xl md:text-4xl lg:text-5xl font-black text-[#0F172A] tracking-tight">
                   Our Purpose
-               </h1>
+               </h2>
             </motion.div>
 
             <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8 lg:gap-10">
@@ -209,7 +209,7 @@ export default function About() {
                   <div className="w-12 h-12 md:w-14 md:h-14 bg-[#F58220]/10 rounded-xl md:rounded-2xl flex items-center justify-center text-[#F58220] mb-6 md:mb-8">
                     <Globe size={24} className="md:w-7 md:h-7" />
                   </div>
-                  <h3 className="text-2xl md:text-3xl font-black uppercase text-[#0F172A] mb-4 md:mb-6">Our Vision</h3>
+                  <h3 className="text-2xl md:text-3xl font-black text-[#0F172A] mb-4 md:mb-6">Our Vision</h3>
                   <p className="text-slate-600 text-base md:text-lg font-medium leading-relaxed flex-grow">
                     "To become a worldwide engineering solutions providing company."
                   </p>
@@ -226,7 +226,7 @@ export default function About() {
                   <div className="w-12 h-12 md:w-14 md:h-14 bg-white/10 rounded-xl md:rounded-2xl flex items-center justify-center text-[#F58220] mb-6 md:mb-8 relative z-10">
                     <Rocket size={24} className="md:w-7 md:h-7" />
                   </div>
-                  <h3 className="text-2xl md:text-3xl font-black uppercase text-white mb-4 md:mb-6 relative z-10">Our Mission</h3>
+                  <h3 className="text-2xl md:text-3xl font-black text-white mb-4 md:mb-6 relative z-10">Our Mission</h3>
                   <p className="text-slate-300 text-base md:text-lg font-medium leading-relaxed relative z-10 flex-grow">
                     "To increase our customer's productivity by developing & implementing powerful Engineering solutions which reflects in time effective user friendly products."
                   </p>
@@ -244,7 +244,7 @@ export default function About() {
                   <div className="w-12 h-12 md:w-14 md:h-14 bg-[#F58220]/10 rounded-xl md:rounded-2xl flex items-center justify-center text-[#F58220] mb-6 md:mb-8">
                     <Target size={24} className="md:w-7 md:h-7" />
                   </div>
-                  <h3 className="text-2xl md:text-3xl font-black uppercase text-[#0F172A] mb-4 md:mb-6">Our Goal</h3>
+                  <h3 className="text-2xl md:text-3xl font-black text-[#0F172A] mb-4 md:mb-6">Our Goal</h3>
                   <p className="text-slate-600 text-base md:text-lg font-medium leading-relaxed flex-grow">
                     "To achieve complete customer satisfaction through zero-defect precision manufacturing, continuous technological innovation, and adhering strictly to the Cost-Quality-Time matrix."
                   </p>
@@ -261,7 +261,7 @@ export default function About() {
                 <span className="text-[#F58220] font-bold text-xs md:text-sm tracking-[4px] md:tracking-[6px] uppercase mb-3 md:mb-4 block">
                     Our Advantage
                 </span>
-                <h2 className="text-3xl md:text-4xl lg:text-5xl font-black uppercase text-[#0F172A] tracking-tight">
+                <h2 className="text-3xl md:text-4xl lg:text-5xl font-black text-[#0F172A] tracking-tight">
                     Why Choose Us?
                 </h2>
             </div>
@@ -281,7 +281,7 @@ export default function About() {
                                 {feature.icon}
                             </div>
                         </div>
-                        <h4 className="text-lg md:text-xl font-bold text-[#0F172A] uppercase tracking-tight mb-3 md:mb-4 group-hover:text-[#F58220] transition-colors">
+                        <h4 className="text-lg md:text-xl font-bold text-[#0F172A] tracking-tight mb-3 md:mb-4 group-hover:text-[#F58220] transition-colors">
                             {feature.title}
                         </h4>
                         <p className="text-sm md:text-base text-slate-600 leading-relaxed">

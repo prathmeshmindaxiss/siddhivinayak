@@ -28,8 +28,8 @@ export default function Hero() {
     },
   };
 
-  const word1 = "SIDDHIVINAYAK".split("");
-  const word2 = "ENGINEERING".split("");
+  const word1 = "Siddhivinayak".split("");
+  const word2 = "Engineering".split("");
 
   return (
     <section className="relative min-h-[100dvh] w-full flex items-center justify-center overflow-hidden bg-[#0B1121]">

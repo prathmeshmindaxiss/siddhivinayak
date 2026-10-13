@@ -46,11 +46,11 @@ export default function Navbar() {
     }
     if (linkName === 'Products') {
       if (current === '/products') return true;
-      return productItems.some((item) => current === `/services/${item.slug}`);
+      return productItems.some((item) => current === `/${item.slug}` || current === `/products/${item.slug}`);
     }
     if (linkName === 'Services') {
       if (current === '/services') return true;
-      return serviceItems.some((item) => current === `/services/${item.slug}`);
+      return serviceItems.some((item) => current === `/${item.slug}` || current === `/services/${item.slug}`);
     }
     return current === href || current.startsWith(href + '/');
   };
@@ -71,7 +71,7 @@ export default function Navbar() {
     { name: 'Home', href: '/' },
     { name: 'About', href: '/about' },
     { name: 'Infrastructure', href: '/infrastructure' },
-    { name: 'Products', href: '/services' },
+    { name: 'Products', href: '/products' },
     { name: 'Services', href: '/services' },
     { name: 'Gallery', href: '/gallery' },
     { name: 'Contact', href: '/contact' },
@@ -223,12 +223,12 @@ export default function Navbar() {
                             initial={{ opacity: 0, y: -10 }}
                             animate={{ opacity: 1, y: 0 }}
                             transition={{ delay: 0.2 + i * 0.08 }}
-                            className={`text-[12px] xl:text-[13px] 2xl:text-[14px] font-bold uppercase tracking-[1px] xl:tracking-[1.5px] transition-colors duration-300 will-change-transform inline-flex items-center gap-1 ${isActive ? 'text-[#F58220]' : 'text-[#0F172A] group-hover:text-[#F58220]'
+                            className={`text-[13.5px] xl:text-[15px] 2xl:text-[16px] font-bold uppercase tracking-[0.5px] xl:tracking-[1px] transition-colors duration-300 will-change-transform inline-flex items-center gap-1 ${isActive ? 'text-[#F58220]' : 'text-[#0F172A] group-hover:text-[#F58220]'
                               }`}
                           >
                             {link.name}
                             <ChevronDown
-                              size={14}
+                              size={15}
                               className={`transition-transform duration-300 ${productsDropdownOpen ? 'rotate-180 text-[#F58220]' : 'text-slate-400 group-hover:text-[#F58220]'}`}
                             />
                           </motion.span>
@@ -249,17 +249,13 @@ export default function Navbar() {
                               <div className="bg-white rounded-2xl shadow-2xl border border-slate-200/90 p-4 overflow-hidden backdrop-blur-xl relative">
                                 <div className="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-[#F58220] via-orange-400 to-[#DA291C]" />
 
-                                <div className="text-[11px] font-black uppercase tracking-[2px] text-[#F58220] mb-2 pb-1.5 border-b border-slate-100 flex items-center justify-between">
-                                  <span>Our Products</span>
-                                  <span className="text-[10px] font-bold text-slate-400 normal-case tracking-normal">({productItems.length})</span>
-                                </div>
-                                <div className="space-y-0.5 mb-2.5">
+                                <div className="space-y-0.5 mb-2.5 pt-1">
                                   {productItems.map((item) => (
                                     <Link
                                       key={item.slug}
-                                      href={`/services/${item.slug}`}
+                                      href={`/${item.slug}`}
                                       onClick={() => {
-                                        setActivePath(`/services/${item.slug}`);
+                                        setActivePath(`/${item.slug}`);
                                         setProductsDropdownOpen(false);
                                       }}
                                       className="group/sub flex items-center gap-2 px-2 py-1.5 rounded-lg text-slate-700 hover:text-[#F58220] hover:bg-orange-50/70 transition-all text-xs font-bold uppercase tracking-wide"
@@ -271,9 +267,9 @@ export default function Navbar() {
                                 </div>
 
                                 <Link
-                                  href="/services"
+                                  href="/products"
                                   onClick={() => {
-                                    setActivePath('/services');
+                                    setActivePath('/products');
                                     setProductsDropdownOpen(false);
                                   }}
                                   className="p-2.5 bg-slate-50 hover:bg-[#F58220] text-[#0F172A] hover:text-white rounded-xl flex items-center justify-between text-xs font-black uppercase tracking-wider transition-all duration-300 border border-slate-200/80 group/all shadow-sm"
@@ -309,12 +305,12 @@ export default function Navbar() {
                             initial={{ opacity: 0, y: -10 }}
                             animate={{ opacity: 1, y: 0 }}
                             transition={{ delay: 0.2 + i * 0.08 }}
-                            className={`text-[12px] xl:text-[13px] 2xl:text-[14px] font-bold uppercase tracking-[1px] xl:tracking-[1.5px] transition-colors duration-300 will-change-transform inline-flex items-center gap-1 ${isActive ? 'text-[#F58220]' : 'text-[#0F172A] group-hover:text-[#F58220]'
+                            className={`text-[13.5px] xl:text-[15px] 2xl:text-[16px] font-bold uppercase tracking-[0.5px] xl:tracking-[1px] transition-colors duration-300 will-change-transform inline-flex items-center gap-1 ${isActive ? 'text-[#F58220]' : 'text-[#0F172A] group-hover:text-[#F58220]'
                               }`}
                           >
                             {link.name}
                             <ChevronDown
-                              size={14}
+                              size={15}
                               className={`transition-transform duration-300 ${servicesDropdownOpen ? 'rotate-180 text-[#F58220]' : 'text-slate-400 group-hover:text-[#F58220]'}`}
                             />
                           </motion.span>
@@ -335,17 +331,13 @@ export default function Navbar() {
                               <div className="bg-white rounded-2xl shadow-2xl border border-slate-200/90 p-4 overflow-hidden backdrop-blur-xl relative">
                                 <div className="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-[#F58220] via-orange-400 to-[#DA291C]" />
 
-                                <div className="text-[11px] font-black uppercase tracking-[2px] text-[#F58220] mb-2 pb-1.5 border-b border-slate-100 flex items-center justify-between">
-                                  <span>Industrial Services</span>
-                                  <span className="text-[10px] font-bold text-slate-400 normal-case tracking-normal">({serviceItems.length})</span>
-                                </div>
-                                <div className="space-y-0.5 mb-2.5">
+                                <div className="space-y-0.5 mb-2.5 pt-1">
                                   {serviceItems.map((item) => (
                                     <Link
                                       key={item.slug}
-                                      href={`/services/${item.slug}`}
+                                      href={`/${item.slug}`}
                                       onClick={() => {
-                                        setActivePath(`/services/${item.slug}`);
+                                        setActivePath(`/${item.slug}`);
                                         setServicesDropdownOpen(false);
                                       }}
                                       className="group/sub flex items-center gap-2 px-2 py-1.5 rounded-lg text-slate-700 hover:text-[#F58220] hover:bg-orange-50/70 transition-all text-xs font-bold uppercase tracking-wide"
@@ -386,7 +378,7 @@ export default function Navbar() {
                         initial={{ opacity: 0, y: -10 }}
                         animate={{ opacity: 1, y: 0 }}
                         transition={{ delay: 0.2 + i * 0.08 }}
-                        className={`text-[12px] xl:text-[13px] 2xl:text-[14px] font-bold uppercase tracking-[1px] xl:tracking-[1.5px] transition-colors duration-300 will-change-transform inline-block ${isActive ? 'text-[#F58220]' : 'text-[#0F172A] group-hover:text-[#F58220]'
+                        className={`text-[13.5px] xl:text-[15px] 2xl:text-[16px] font-bold uppercase tracking-[0.5px] xl:tracking-[1px] transition-colors duration-300 will-change-transform inline-block ${isActive ? 'text-[#F58220]' : 'text-[#0F172A] group-hover:text-[#F58220]'
                           }`}
                       >
                         {link.name}
@@ -521,7 +513,7 @@ export default function Navbar() {
                   <button
                     type="button"
                     onClick={() => setMobileProductsOpen(!mobileProductsOpen)}
-                    className={`w-full py-3.5 px-4 rounded-full border text-xs sm:text-sm font-black uppercase tracking-wider flex items-center justify-center gap-2 transition-all shadow-sm ${mobileProductsOpen || isLinkActive('/services', 'Products')
+                    className={`w-full py-3.5 px-4 rounded-full border text-xs sm:text-sm font-black uppercase tracking-wider flex items-center justify-center gap-2 transition-all shadow-sm ${mobileProductsOpen || isLinkActive('/products', 'Products')
                         ? 'bg-[#F58220] text-white border-[#F58220] shadow-md shadow-orange-500/25'
                         : 'bg-white text-slate-700 border-slate-200/90 hover:border-[#F58220] hover:text-[#F58220]'
                       }`}
@@ -542,15 +534,12 @@ export default function Navbar() {
                         transition={{ duration: 0.25 }}
                         className="overflow-hidden bg-slate-50 rounded-2xl border border-slate-200/80 p-3 space-y-1"
                       >
-                        <div className="text-[10px] font-black uppercase tracking-[2px] text-[#F58220] px-2 pt-1 pb-1">
-                          Our Products ({productItems.length})
-                        </div>
                         {productItems.map((item) => (
                           <Link
                             key={item.slug}
-                            href={`/services/${item.slug}`}
+                            href={`/${item.slug}`}
                             onClick={() => {
-                              setActivePath(`/services/${item.slug}`);
+                              setActivePath(`/${item.slug}`);
                               setIsOpen(false);
                             }}
                             className="block px-3 py-2 rounded-xl text-xs font-bold text-slate-700 hover:text-white hover:bg-[#F58220] transition-all uppercase tracking-wide truncate"
@@ -560,9 +549,9 @@ export default function Navbar() {
                         ))}
 
                         <Link
-                          href="/services"
+                          href="/products"
                           onClick={() => {
-                            setActivePath('/services');
+                            setActivePath('/products');
                             setIsOpen(false);
                           }}
                           className="block text-center py-2 text-xs font-black uppercase tracking-wider text-[#F58220] hover:underline pt-2 border-t border-slate-200"
@@ -600,15 +589,12 @@ export default function Navbar() {
                         transition={{ duration: 0.25 }}
                         className="overflow-hidden bg-slate-50 rounded-2xl border border-slate-200/80 p-3 space-y-1"
                       >
-                        <div className="text-[10px] font-black uppercase tracking-[2px] text-[#F58220] px-2 pt-1 pb-1">
-                          Industrial Services ({serviceItems.length})
-                        </div>
                         {serviceItems.map((item) => (
                           <Link
                             key={item.slug}
-                            href={`/services/${item.slug}`}
+                            href={`/${item.slug}`}
                             onClick={() => {
-                              setActivePath(`/services/${item.slug}`);
+                              setActivePath(`/${item.slug}`);
                               setIsOpen(false);
                             }}
                             className="block px-3 py-2 rounded-xl text-xs font-bold text-slate-700 hover:text-white hover:bg-[#F58220] transition-all uppercase tracking-wide truncate"

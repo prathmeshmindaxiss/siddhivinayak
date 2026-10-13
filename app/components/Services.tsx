@@ -146,7 +146,7 @@ export default function Services() {
         
         {/* SECTION HEADER */}
         <div className="mb-6 md:mb-10 text-center flex flex-col items-center">
-          <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-black uppercase tracking-tight text-white leading-[1.05]">
+          <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-black tracking-tight text-white leading-[1.05]">
             Our Core <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#F58220] via-[#FFA048] to-[#DA291C]">Products</span>
           </h2>
           <p className="text-slate-400 text-xs sm:text-sm md:text-base max-w-xl mt-2.5 font-normal mx-auto">
@@ -198,7 +198,7 @@ export default function Services() {
                     transition={{ duration: 0.25 }}
                     className="flex flex-col gap-3 sm:gap-4"
                   >
-                    <h3 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-black uppercase tracking-tight text-[#0F172A] leading-[1.1]">
+                    <h3 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-black tracking-tight text-[#0F172A] leading-[1.1]">
                       {currentService.title}
                     </h3>
 
@@ -214,7 +214,7 @@ export default function Services() {
               {/* Explore Now Button - Static in place */}
               <div className="mt-6 md:mt-8 pt-1">
                 <Link 
-                  href={`/services/${currentService.slug}`} 
+                  href={`/${currentService.slug}`} 
                   className="inline-flex items-center gap-2.5 sm:gap-3 px-5 sm:px-6 py-2.5 sm:py-3 rounded-xl bg-[#F58220] hover:bg-[#0F172A] text-white font-bold text-xs sm:text-sm uppercase tracking-wider shadow-md shadow-orange-500/25 hover:shadow-lg hover:shadow-slate-900/20 transition-all duration-300 hover:scale-[1.02] active:scale-95 group w-fit cursor-pointer"
                 >
                   <span>Explore Now</span>
