@@ -103,95 +103,103 @@ export default function Infrastructure() {
         </motion.div>
       </section>
 
-      <div className="max-w-[100rem] mx-auto px-4 sm:px-6 py-12 md:py-20 space-y-16 md:space-y-32">
-        
-        {/* --- SECTION 1: FACILITY IMAGES CAROUSEL --- */}
-        <section>
-            <div className="flex flex-col items-center mb-6 md:mb-8 text-center">
-               <h2 className="text-2xl sm:text-3xl font-bold text-white tracking-tight">Our Shop Floor</h2>
-               <div className="h-1 w-16 sm:w-20 bg-[#F58220] rounded-full mt-3 sm:mt-4"></div>
-            </div>
+      {/* --- SECTION 1: FACILITY IMAGES CAROUSEL (CLEAN LIGHT/WHITE BACKGROUND) --- */}
+      <section className="relative w-full py-14 sm:py-20 md:py-24 bg-white border-b border-slate-200 overflow-hidden">
+        {/* Subtle grid pattern for clean industrial contrast */}
+        <div className="absolute inset-0 bg-[linear-gradient(to_right,#00000006_1px,transparent_1px),linear-gradient(to_bottom,#00000006_1px,transparent_1px)] bg-[size:32px_32px] pointer-events-none"></div>
+        <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[600px] h-[250px] bg-[#F58220]/5 blur-[100px] rounded-full pointer-events-none"></div>
 
-            <div className="relative w-full h-[400px] sm:h-[500px] md:h-[600px] flex items-center justify-center overflow-hidden py-10">
-               {facilityImages.map((img, i) => {
-                  let offset = i - activeSlide;
-                  if (offset < -Math.floor(facilityImages.length / 2)) offset += facilityImages.length;
-                  if (offset > Math.floor(facilityImages.length / 2)) offset -= facilityImages.length;
+        <div className="relative z-10 max-w-[100rem] mx-auto px-4 sm:px-6">
+          <div className="flex flex-col items-center mb-6 md:mb-8 text-center">
+             <h2 className="text-2xl sm:text-3xl md:text-4xl font-extrabold text-slate-900 tracking-tight">
+               Machinery & <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#F58220] to-[#DA291C]">Equipment</span>
+             </h2>
+             <div className="h-1 w-16 sm:w-20 bg-[#F58220] rounded-full mt-3 sm:mt-4"></div>
+          </div>
 
-                  let x = "0%";
-                  let scale = 1;
-                  let opacity = 1;
-                  let zIndex = 50;
+          <div className="relative w-full h-[400px] sm:h-[500px] md:h-[600px] flex items-center justify-center overflow-hidden py-10">
+             {facilityImages.map((img, i) => {
+                let offset = i - activeSlide;
+                if (offset < -Math.floor(facilityImages.length / 2)) offset += facilityImages.length;
+                if (offset > Math.floor(facilityImages.length / 2)) offset -= facilityImages.length;
 
-                  if (offset === 0) {
-                     x = "0%"; scale = 1; opacity = 1; zIndex = 50;
-                  } else if (offset === 1) {
-                     x = "40%"; scale = 0.85; opacity = 0.6; zIndex = 40;
-                  } else if (offset === -1) {
-                     x = "-40%"; scale = 0.85; opacity = 0.6; zIndex = 40;
-                  } else if (offset === 2) {
-                     x = "70%"; scale = 0.7; opacity = 0.3; zIndex = 30;
-                  } else if (offset === -2) {
-                     x = "-70%"; scale = 0.7; opacity = 0.3; zIndex = 30;
-                  } else {
-                     x = offset > 0 ? "100%" : "-100%"; scale = 0.5; opacity = 0; zIndex = 10;
-                  }
+                let x = "0%";
+                let scale = 1;
+                let opacity = 1;
+                let zIndex = 50;
 
-                  return (
-                     <motion.div
-                        key={i}
-                        animate={{ x, scale, opacity, zIndex }}
-                        transition={{ duration: 0.6, ease: [0.32, 0.72, 0, 1] }}
-                        onClick={() => setActiveSlide(i)}
-                        className={`absolute w-[320px] sm:w-[450px] md:w-[600px] aspect-[4/3] rounded-2xl overflow-hidden bg-[#162235] border border-white/10 shadow-[0_20px_40px_rgba(0,0,0,0.6)] cursor-pointer flex flex-col justify-end
-                          ${offset === 0 ? "border-[#F58220] shadow-[0_0_30px_rgba(245,130,32,0.15)] ring-1 ring-[#F58220]" : "hover:border-white/30"}
-                        `}
-                     >
-                        <div className="absolute inset-0 w-full h-full bg-[#111a27]/80 p-4">
-                            
-                            {/* ✅ LOGO KO TOP-LEFT RAKHA HAI */}
-                            <div className="absolute top-4 left-4 z-20 w-12 h-12 md:w-14 md:h-14 bg-white/5 backdrop-blur-sm rounded-lg p-1.5 border border-white/10 shadow-sm pointer-events-none">
-                               <Image 
-                                 src="/Logo_Siddhivinayak_Engg_-_Copy.jpg-removebg-preview.png" 
-                                 alt="Company Logo" 
-                                 fill 
-                                 className="object-contain drop-shadow-md"
-                               />
-                            </div>
+                if (offset === 0) {
+                   x = "0%"; scale = 1; opacity = 1; zIndex = 50;
+                } else if (offset === 1) {
+                   x = "40%"; scale = 0.85; opacity = 0.6; zIndex = 40;
+                } else if (offset === -1) {
+                   x = "-40%"; scale = 0.85; opacity = 0.6; zIndex = 40;
+                } else if (offset === 2) {
+                   x = "70%"; scale = 0.7; opacity = 0.3; zIndex = 30;
+                } else if (offset === -2) {
+                   x = "-70%"; scale = 0.7; opacity = 0.3; zIndex = 30;
+                } else {
+                   x = offset > 0 ? "100%" : "-100%"; scale = 0.5; opacity = 0; zIndex = 10;
+                }
 
-                            <Image 
-                              src={img.src} 
-                              alt={img.label} 
-                              fill 
-                              sizes="(max-width: 640px) 80vw, (max-width: 768px) 50vw, 33vw"
-                              className="object-contain p-6 pb-16" 
-                            />
-                        </div>
-                        <div className="absolute inset-x-0 bottom-0 h-28 bg-gradient-to-t from-[#05080c] via-transparent to-transparent pointer-events-none flex items-end pb-4 px-6">
-                           <div className="flex items-center gap-4">
-                              <div className="flex-1 min-w-0">
-                                <div className="flex items-center gap-3">
-                                   <div className="w-1.5 h-6 bg-[#F58220] rounded-full"></div>
-                                   <h3 className="font-bold text-base md:text-2xl text-white tracking-wide truncate">{img.label}</h3>
-                                </div>
+                return (
+                   <motion.div
+                      key={i}
+                      animate={{ x, scale, opacity, zIndex }}
+                      transition={{ duration: 0.6, ease: [0.32, 0.72, 0, 1] }}
+                      onClick={() => setActiveSlide(i)}
+                      className={`absolute w-[320px] sm:w-[450px] md:w-[600px] aspect-[4/3] rounded-2xl overflow-hidden bg-slate-50 border border-slate-200 shadow-[0_20px_45px_rgba(15,23,42,0.12)] cursor-pointer flex flex-col justify-end
+                        ${offset === 0 ? "border-[#F58220] shadow-[0_16px_40px_rgba(245,130,32,0.22)] ring-2 ring-[#F58220]" : "hover:border-slate-400/80"}
+                      `}
+                   >
+                      <div className="absolute inset-0 w-full h-full bg-gradient-to-b from-slate-50/90 via-white to-slate-100/60 p-4">
+                          
+                          {/* ✅ LOGO KO TOP-LEFT RAKHA HAI */}
+                          <div className="absolute top-4 left-4 z-20 w-12 h-12 md:w-14 md:h-14 bg-white/95 backdrop-blur-sm rounded-lg p-1.5 border border-slate-200 shadow-sm pointer-events-none">
+                             <Image 
+                               src="/Logo_Siddhivinayak_Engg_-_Copy.jpg-removebg-preview.png" 
+                               alt="Company Logo" 
+                               fill 
+                               className="object-contain drop-shadow-sm"
+                             />
+                          </div>
+
+                          <Image 
+                            src={img.src} 
+                            alt={img.label} 
+                            fill 
+                            sizes="(max-width: 640px) 80vw, (max-width: 768px) 50vw, 33vw"
+                            className="object-contain p-6 pb-16" 
+                          />
+                      </div>
+                      <div className="absolute inset-x-0 bottom-0 h-28 bg-gradient-to-t from-slate-950/85 via-slate-900/40 to-transparent pointer-events-none flex items-end pb-4 px-6">
+                         <div className="flex items-center gap-4">
+                            <div className="flex-1 min-w-0">
+                              <div className="flex items-center gap-3">
+                                 <div className="w-1.5 h-6 bg-[#F58220] rounded-full"></div>
+                                 <h3 className="font-bold text-base md:text-2xl text-white tracking-wide truncate drop-shadow">{img.label}</h3>
                               </div>
-                           </div>
-                        </div>
-                     </motion.div>
-                  );
-               })}
-            </div>
+                            </div>
+                         </div>
+                      </div>
+                   </motion.div>
+                );
+             })}
+          </div>
 
-            <div className="flex justify-center items-center gap-4 sm:gap-6 mt-2">
-              <button onClick={prevSlide} className="w-10 h-10 sm:w-12 sm:h-12 md:w-14 md:h-14 rounded-full border border-white/10 bg-[#141b26] flex items-center justify-center hover:bg-[#F58220] text-slate-300 hover:text-white transition-all hover:border-[#F58220]">
-                <ChevronLeft size={20} className="sm:w-6 sm:h-6 md:w-7 md:h-7" />
-              </button>
-              <button onClick={nextSlide} className="w-10 h-10 sm:w-12 sm:h-12 md:w-14 md:h-14 rounded-full border border-white/10 bg-[#141b26] flex items-center justify-center hover:bg-[#F58220] text-slate-300 hover:text-white transition-all hover:border-[#F58220]">
-                <ChevronRight size={20} className="sm:w-6 sm:h-6 md:w-7 md:h-7" />
-              </button>
-            </div>
-        </section>
+          <div className="flex justify-center items-center gap-4 sm:gap-6 mt-4">
+            <button onClick={prevSlide} className="w-10 h-10 sm:w-12 sm:h-12 md:w-14 md:h-14 rounded-full border border-slate-300 bg-white shadow-md flex items-center justify-center hover:bg-[#F58220] text-slate-700 hover:text-white transition-all hover:border-[#F58220] hover:scale-105 active:scale-95" aria-label="Previous slide">
+              <ChevronLeft size={20} className="sm:w-6 sm:h-6 md:w-7 md:h-7" />
+            </button>
+            <button onClick={nextSlide} className="w-10 h-10 sm:w-12 sm:h-12 md:w-14 md:h-14 rounded-full border border-slate-300 bg-white shadow-md flex items-center justify-center hover:bg-[#F58220] text-slate-700 hover:text-white transition-all hover:border-[#F58220] hover:scale-105 active:scale-95" aria-label="Next slide">
+              <ChevronRight size={20} className="sm:w-6 sm:h-6 md:w-7 md:h-7" />
+            </button>
+          </div>
+        </div>
+      </section>
 
+      {/* --- MACHINERY & DETAILS SECTION (DARK BACKGROUND) --- */}
+      <div className="max-w-[100rem] mx-auto px-4 sm:px-6 py-12 md:py-20">
         {/* --- SECTION 2: MACHINERY & INSPECTION --- */}
         <section className="grid lg:grid-cols-3 gap-6 lg:gap-8">
           <div className="lg:col-span-2 flex flex-col min-w-0 w-full">

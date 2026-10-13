@@ -30,7 +30,7 @@ interface GalleryItem {
 
 const galleryItems: GalleryItem[] = [
   // ==========================================
-  // --- 1. PRODUCT IMAGES ---
+  // --- 1. PRODUCT IMAGES (6 MAIN CATALOG PRODUCTS) ---
   // ==========================================
   {
     id: 1,
@@ -48,325 +48,101 @@ const galleryItems: GalleryItem[] = [
   },
   {
     id: 3,
-    title: "Geo & Re-Spot BIW Fixture",
-    category: "Product Images",
-    image: "/New some photos/WELDING FIXTURES (2).png",
-    desc: "Tier-1 automotive framing station built to strict OEM geometric tolerances."
-  },
-  {
-    id: 4,
-    title: "Automotive BIW Assembly Fixture",
-    category: "Product Images",
-    image: "/New some photos/WELDING FIXTURES (3).png",
-    desc: "Heavy-rigidity fixture designed for robotic resistance and arc welding lines."
-  },
-  {
-    id: 5,
-    title: "Modular Framing Fixture",
-    category: "Product Images",
-    image: "/New some photos/WELDING FIXTURES (4).png",
-    desc: "Shim-adjusted precision framing fixture ensuring exact panel repeatability."
-  },
-  {
-    id: 6,
-    title: "Poka-Yoke Assembly Fixture",
-    category: "Product Images",
-    image: "/New some photos/FIXTURES.png",
-    desc: "Mistake-proof assembly fixture physically preventing incorrect part orientations."
-  },
-  {
-    id: 7,
-    title: "CMM Checking & Inspection Fixture",
-    category: "Product Images",
-    image: "/New some photos/TOOLS (2).png",
-    desc: "GD&T compliant inspection fixture equipped with dial indicators and Go/No-Go pins."
-  },
-  {
-    id: 8,
-    title: "Precision Dimensional Gauges",
-    category: "Product Images",
-    image: "/MACHINE PHOTOS/gauges.png",
-    desc: "Hardened OHNS custom gauges for rapid shop-floor multi-parameter quality verification."
-  },
-  {
-    id: 9,
-    title: "Component Verification Tool",
-    category: "Product Images",
-    image: "/New some photos/TOOLS (3).png",
-    desc: "Metrology-certified inspection tooling with sub-micron wear-resistant contact surfaces."
-  },
-  {
-    id: 10,
     title: "Industrial Welding Tooling",
     category: "Product Images",
     image: "/New some photos/WELDING FIXTURE 1.png",
     desc: "Robust customized welding fixture with quick-toggle clamps and grounding connections."
   },
   {
-    id: 11,
-    title: "Cast Nylon Precision Tool",
+    id: 4,
+    title: "CMM Checking & Inspection Fixture",
     category: "Product Images",
-    image: "/New some photos/CAST NYLON TOOL.png",
-    desc: "Engineered cast nylon guide tooling with low coefficient of friction and zero surface marring."
+    image: "/New some photos/TOOLS (2).png",
+    desc: "GD&T compliant inspection fixture equipped with dial indicators and Go/No-Go pins."
+  },
+  {
+    id: 5,
+    title: "Component Verification Tool",
+    category: "Product Images",
+    image: "/New some photos/TOOLS (3).png",
+    desc: "Metrology-certified inspection tooling with sub-micron wear-resistant contact surfaces."
+  },
+  {
+    id: 6,
+    title: "Geo & Re-Spot BIW Fixture",
+    category: "Product Images",
+    image: "/New some photos/WELDING FIXTURES (2).png",
+    desc: "Tier-1 automotive framing station built to strict OEM geometric tolerances."
+  },
+  {
+    id: 7,
+    title: "Automotive BIW Assembly Fixture",
+    category: "Product Images",
+    image: "/New some photos/WELDING FIXTURES (3).png",
+    desc: "Heavy-rigidity fixture designed for robotic resistance and arc welding lines."
+  },
+  {
+    id: 8,
+    title: "Modular Framing Fixture",
+    category: "Product Images",
+    image: "/New some photos/WELDING FIXTURES (4).png",
+    desc: "Shim-adjusted precision framing fixture ensuring exact panel repeatability."
+  },
+  {
+    id: 9,
+    title: "Poka-Yoke Assembly Fixture",
+    category: "Product Images",
+    image: "/New some photos/FIXTURES.png",
+    desc: "Mistake-proof assembly fixture physically preventing incorrect part orientations."
+  },
+  {
+    id: 10,
+    title: "Precision Dimensional Gauges",
+    category: "Product Images",
+    image: "/MACHINE PHOTOS/gauges.png",
+    desc: "Hardened OHNS custom gauges for rapid shop-floor multi-parameter quality verification."
+  },
+  {
+    id: 11,
+    title: "Precision Machine Spares & Shafts",
+    category: "Product Images",
+    image: "/whatsapp folder/WhatsApp Image 2026-02-10 at 2.58.51 PM.png",
+    desc: "Bespoke manufacturing of critical machinery spares, heavy-duty shafts, and complex mechanical components."
   },
   {
     id: 12,
-    title: "Special Spiral Bevel Gear",
+    title: "High-Precision Machine Components",
     category: "Product Images",
-    image: "/New some photos/SPECIAL GEAR.png",
-    desc: "High-grade alloy steel spiral bevel gear machined with micron-level tooth profiles."
+    image: "/whatsapp folder/WhatsApp Image 2026-02-10 at 2.58.50 PM (1).png",
+    desc: "Precision ground and CNC machined parts built to exacting dimensional tolerances."
   },
   {
     id: 13,
-    title: "Heavy Transmission Gear",
-    category: "Product Images",
-    image: "/New some photos/SPECIAL GEARS (2).png",
-    desc: "Case-hardened precision transmission gear designed for heavy dynamic load endurance."
-  },
-  {
-    id: 14,
-    title: "Spur & Helical Gear Assembly",
-    category: "Product Images",
-    image: "/New some photos/SPECIAL GEARS (3).png",
-    desc: "Induction-hardened precision gear set engineered for silent, high-efficiency power transmission."
-  },
-  {
-    id: 15,
-    title: "Special Machined Gear Set",
-    category: "Product Images",
-    image: "/New some photos/SPECIAL GEARS (4).png",
-    desc: "Multi-stage reduction gears manufactured to stringent AGMA/DIN quality standards."
-  },
-  {
-    id: 16,
-    title: "High-Speed Spiral Gear",
-    category: "Product Images",
-    image: "/New some photos/SPIRAL GEAR.png",
-    desc: "Precision cylindrical-ground spiral gear built for continuous high-RPM machinery."
-  },
-  {
-    id: 17,
-    title: "Phosphor Bronze Bushings",
-    category: "Product Images",
-    image: "/New some photos/PB BUSH (2).png",
-    desc: "Self-lubricating PB grade bushings turned to exact concentricity and tight tolerance."
-  },
-  {
-    id: 18,
-    title: "PB Flanged Bushing",
-    category: "Product Images",
-    image: "/New some photos/PB BUSH (3).png",
-    desc: "High-wear resistant flanged bronze bushing engineered for continuous oscillating shafts."
-  },
-  {
-    id: 19,
-    title: "Precision Hardened Pins",
+    title: "Precision Hardened Locating Pins",
     category: "Product Images",
     image: "/New some photos/PINS.png",
     desc: "Centerless-ground locating and dowel pins with mirror surface finishes."
   },
   {
-    id: 20,
-    title: "HSS Industrial Shear Blades",
-    category: "Product Images",
-    image: "/New some photos/HSS BLADES.png",
-    desc: "Cryogenically treated high-speed steel cutting blades with extreme edge retention."
-  },
-  {
-    id: 21,
-    title: "High-Speed Steel Blades",
-    category: "Product Images",
-    image: "/New some photos/HSS BLADES (2).png",
-    desc: "Custom precision ground HSS blades built for food and poultry processing machinery."
-  },
-  {
-    id: 22,
-    title: "Movable Shear Blades",
-    category: "Product Images",
-    image: "/New some photos/MOVABLE BLADES.png",
-    desc: "Wear-resistant movable shear tooling designed for heavy-duty metal guillotines."
-  },
-  {
-    id: 23,
+    id: 14,
     title: "Stainless Steel Precision Flanges",
     category: "Product Images",
     image: "/New some photos/SS FLANGES.png",
     desc: "SS304/316 precision CNC turned and bored flanges for high-pressure systems."
   },
   {
-    id: 24,
-    title: "CNC Turned SS Flanges",
+    id: 15,
+    title: "Special Spiral Bevel Gear",
     category: "Product Images",
-    image: "/New some photos/SS FLANGES (2).png",
-    desc: "Heavy-duty corrosion resistant flanges machined to high dimensional repeatability."
+    image: "/New some photos/SPECIAL GEAR.png",
+    desc: "High-grade alloy steel spiral bevel gear machined with micron-level tooth profiles."
   },
   {
-    id: 25,
-    title: "Heavy Machined SS Housing",
+    id: 16,
+    title: "Spur & Helical Gear Assembly",
     category: "Product Images",
-    image: "/New some photos/SS HOUSING.png",
-    desc: "Custom multi-axis VMC machined bearing housing with precision bore alignments."
-  },
-  {
-    id: 26,
-    title: "Precision Mixer Rotors",
-    category: "Product Images",
-    image: "/New some photos/MIXER ROTORS.png",
-    desc: "Dynamically balanced mixing impellers engineered to resist abrasive slurry wear."
-  },
-  {
-    id: 27,
-    title: "Molded Rubber Components",
-    category: "Product Images",
-    image: "/New some photos/RUBBER MODED PARTS.png",
-    desc: "High-durability vulcanized industrial rubber dampers and custom sealing parts."
-  },
-  {
-    id: 28,
-    title: "Industrial Fabricated Shell",
-    category: "Product Images",
-    image: "/New some photos/FABRICATED SHELL.png",
-    desc: "Heavy steel cylindrical shell fabrication with full dye-penetrant tested seam welds."
-  },
-  {
-    id: 29,
-    title: "Fabricated MS Steel Shells",
-    category: "Product Images",
-    image: "/New some photos/MS STEEL SHELLS.png",
-    desc: "Thick-walled structural shells roll-bent and welded for industrial furnace equipment."
-  },
-  {
-    id: 30,
-    title: "Heavy Mild Steel Funnel & Hopper",
-    category: "Product Images",
-    image: "/New some photos/MS FUNNEL.png",
-    desc: "Precision plasma-cut and roll-formed funnel structure for bulk material feed lines."
-  },
-  {
-    id: 31,
-    title: "Stainless Steel Storage Hopper",
-    category: "Product Images",
-    image: "/New some photos/SS HOPPERS.png",
-    desc: "Sanitary grade SS304 hopper featuring argon-purged TIG welded smooth transitions."
-  },
-  {
-    id: 32,
-    title: "SS Conical Feed Hopper",
-    category: "Product Images",
-    image: "/New some photos/SS HOPERS.png",
-    desc: "Mirror-polished stainless steel feed hopper engineered for pharmaceutical and chemical lines."
-  },
-  {
-    id: 33,
-    title: "Material Handling Shop Trolley",
-    category: "Product Images",
-    image: "/New some photos/MATERIAL HANDLING  TROLLEY (2).png",
-    desc: "Ergonomic lean-manufacturing trolley equipped with heavy-duty swivel casters."
-  },
-  {
-    id: 34,
-    title: "Heavy Transport Trolley",
-    category: "Product Images",
-    image: "/New some photos/MATERIAL HANDLING  TROLLEY (3).png",
-    desc: "High load-bearing fabricated transport trolley for intra-plant component movements."
-  },
-  {
-    id: 35,
-    title: "Custom Tool Storage Trolley",
-    category: "Product Images",
-    image: "/New some photos/TOOLS HANDLING TROLLEY.png",
-    desc: "Specialized tooling protection trolley designed to safeguard precision fixtures and dies."
-  },
-  {
-    id: 36,
-    title: "Special Workshop Handling Trolley",
-    category: "Product Images",
-    image: "/New some photos/SPECIAL  TROLLEY.png",
-    desc: "Custom-configured multi-tier workshop trolley for tooling and raw material movement."
-  },
-  {
-    id: 37,
-    title: "Heavy Industrial Fabrication",
-    category: "Product Images",
-    image: "/MACHINE PHOTOS/fabrication.jpg",
-    desc: "Complete structural framework fabricated and finished with industrial epoxy coating."
-  },
-  {
-    id: 38,
-    title: "Heavy MS Storage Rack",
-    category: "Product Images",
-    image: "/New some photos/MS FABRICATED RACK.png",
-    desc: "Modular structural storage racking built for heavy toolroom inventory."
-  },
-  {
-    id: 39,
-    title: "Part Hanging Stands",
-    category: "Product Images",
-    image: "/New some photos/PART HANING STANDS.png",
-    desc: "Shop-floor powder-coating and assembly line components hanging system."
-  },
-  {
-    id: 40,
-    title: "Shopfloor Instruction Stand",
-    category: "Product Images",
-    image: "/New some photos/INSTUCTION STAND.png",
-    desc: "Ergonomic industrial display station for blueprint drawings and SOP documentation."
-  },
-  {
-    id: 41,
-    title: "Heavy Inspection Tables",
-    category: "Product Images",
-    image: "/New some photos/TABLES.png",
-    desc: "Reinforced structural steel work tables engineered for heavy quality check benches."
-  },
-  {
-    id: 42,
-    title: "Precision Aluminium Mold",
-    category: "Product Images",
-    image: "/New some photos/ALUMINIUM MOLD.png",
-    desc: "High-finish aircraft grade aluminium tooling cavity CNC milled for composite molding."
-  },
-  {
-    id: 43,
-    title: "Alu Cast Teak Wood Mold Pattern",
-    category: "Product Images",
-    image: "/New some photos/ALU CAST TEAK WOOD MOLD.png",
-    desc: "Master teak wood foundry pattern machined for dimensionally critical aluminum castings."
-  },
-  {
-    id: 44,
-    title: "Ceramic Mold in Bakelite",
-    category: "Product Images",
-    image: "/New some photos/CERAMIC MOLD IN BAKELITE.png",
-    desc: "Heat-resistant Bakelite tooling block engineered for electrical and ceramic components."
-  },
-  {
-    id: 45,
-    title: "Industrial Ceramic Mold",
-    category: "Product Images",
-    image: "/New some photos/CERAMIC MOLD.png",
-    desc: "Complex multi-piece ceramic press mold with high abrasion-resistant cavities."
-  },
-  {
-    id: 46,
-    title: "Ceramic Mold Bakelite Tool",
-    category: "Product Images",
-    image: "/New some photos/CERAMIC MOLD BAKELITE.png",
-    desc: "High-temperature dielectric tooling pattern built for ceramic component molding."
-  },
-  {
-    id: 47,
-    title: "Teak Wood Foundry Tooling",
-    category: "Product Images",
-    image: "/New some photos/TEAK WOOD TOOLS.png",
-    desc: "Hand-finished master teak patterns for high-volume sand and shell mold castings."
-  },
-  {
-    id: 48,
-    title: "Pattern Teak Wood Tooling",
-    category: "Product Images",
-    image: "/New some photos/TEAK WOOD TOOLS (2).png",
-    desc: "Traditional seasoned teak wood precision casting pattern crafted for foundry tools."
+    image: "/New some photos/SPECIAL GEARS (3).png",
+    desc: "Induction-hardened precision gear set engineered for silent, high-efficiency power transmission."
   },
 
   // ==========================================

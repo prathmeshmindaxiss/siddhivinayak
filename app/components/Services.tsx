@@ -91,12 +91,14 @@ const slideVariants = {
   }),
 };
 
+const productItems = servicesData.filter((item) => item.type === "product");
+
 export default function Services() {
   const [[currentIndex, direction], setPage] = useState<[number, number]>([0, 0]);
   const [isHovered, setIsHovered] = useState(false);
   const containerRef = useRef<HTMLDivElement>(null);
 
-  const total = servicesData.length;
+  const total = productItems.length;
 
   const paginate = useCallback((newDirection: number) => {
     setPage(([prev]) => {
@@ -128,7 +130,7 @@ export default function Services() {
     return () => window.removeEventListener("keydown", handleKeyDown);
   }, [paginate]);
 
-  const currentService = servicesData[currentIndex];
+  const currentService = productItems[currentIndex];
 
   return (
     <section 
