@@ -1,9 +1,18 @@
-import type { Metadata } from "next";
+import type { Metadata, Viewport } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
 import FloatingActions from "./components/FloatingActions";
 
-const inter = Inter({ subsets: ["latin"] });
+const inter = Inter({
+  subsets: ["latin"],
+  display: "swap",
+});
+
+export const viewport: Viewport = {
+  width: "device-width",
+  initialScale: 1,
+  themeColor: "#0B1121",
+};
 
 export const metadata: Metadata = {
   title: "Siddhivinayak Engineering",

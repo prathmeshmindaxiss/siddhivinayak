@@ -32,37 +32,39 @@ export default function Hero() {
   const word2 = "Engineering".split("");
 
   return (
-    <section className="relative min-h-[100dvh] w-full flex items-center justify-center overflow-hidden bg-[#0B1121]">
+    <section className="relative w-full h-[calc(100vh-120px)] sm:h-[calc(100vh-128px)] md:h-[calc(100vh-136px)] min-h-[500px] mt-[120px] sm:mt-[128px] md:mt-[136px] flex items-center justify-center overflow-hidden bg-[#0B1121]">
 
-      {/* --- BACKGROUND VIDEO --- */}
+      {/* --- BACKGROUND VIDEO (FIT PROPERLY IN HERO SECTION) --- */}
       <video
         autoPlay
         loop
         muted
         playsInline
-        className="absolute inset-0 w-full h-full object-cover z-0"
+        preload="auto"
+        className="absolute inset-0 w-full h-full object-cover object-center z-0 pointer-events-none"
         src="/वीडियो_को_और_बेहतर_बनाएं.mp4"
       />
 
-      {/* --- OVERLAYS --- */}
-      <div className="absolute inset-0 bg-black/60 z-10"></div>
+      {/* --- OVERLAYS (Slight darkening for clear text contrast while showing video clearly) --- */}
+      <div className="absolute inset-0 bg-black/35 z-10 pointer-events-none"></div>
 
-      <div className="absolute inset-0 bg-[linear-gradient(to_right,#ffffff05_1px,transparent_1px),linear-gradient(to_bottom,#ffffff05_1px,transparent_1px)] bg-[size:40px_40px] pointer-events-none opacity-40 z-10"></div>
+      <div className="absolute inset-0 bg-[linear-gradient(to_right,#ffffff05_1px,transparent_1px),linear-gradient(to_bottom,#ffffff05_1px,transparent_1px)] bg-[size:40px_40px] pointer-events-none opacity-25 z-10"></div>
 
-      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[300px] md:w-[500px] h-[300px] md:h-[500px] bg-blue-500/10 rounded-full blur-[80px] md:blur-[120px] pointer-events-none z-10"></div>
+      {/* Subtle center ambient radial light */}
+      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[350px] md:w-[600px] h-[350px] md:h-[600px] bg-blue-500/10 rounded-full blur-[100px] pointer-events-none z-10"></div>
 
-      {/* --- MAIN CONTENT --- */}
-      <div className="relative z-40 flex flex-col items-center justify-center text-center px-4 sm:px-6 md:px-16 w-full max-w-6xl mx-auto mt-12 md:mt-0">
+      {/* --- MAIN CONTENT (EXACT VERTICAL & HORIZONTAL CENTER) --- */}
+      <div className="relative z-40 flex flex-col items-center justify-center text-center px-4 sm:px-6 md:px-12 w-full max-w-6xl mx-auto">
 
-        {/* HEADLINE (Letter By Letter) */}
+        {/* HEADLINE (Letter By Letter - NO overflow clipping) */}
         <motion.h1
           variants={textContainer}
           initial="hidden"
           animate="visible"
-          className="text-3xl sm:text-5xl md:text-7xl lg:text-[5.5rem] xl:text-[6.5rem] font-black leading-[1.1] mb-0 tracking-tight drop-shadow-2xl text-center will-change-transform"
+          className="text-4xl sm:text-6xl md:text-7xl lg:text-8xl xl:text-[5.5rem] font-black leading-[1.15] mb-0 tracking-tight drop-shadow-[0_12px_40px_rgba(0,0,0,0.95)] text-center will-change-transform"
         >
-          {/* First Word (White) */}
-          <span className="block text-white mb-1 md:mb-2 overflow-hidden">
+          {/* First Word (White - with generous bottom padding so descenders are never cut) */}
+          <span className="block text-white pb-1 sm:pb-2 leading-tight">
             {word1.map((char, index) => (
               <motion.span key={`w1-${index}`} variants={textChild} className="inline-block will-change-transform">
                 {char}
@@ -70,8 +72,8 @@ export default function Hero() {
             ))}
           </span>
 
-          {/* Second Word (Premium Orange) */}
-          <span className="block text-[#F58220] overflow-hidden">
+          {/* Second Word (Premium Orange - with generous bottom padding so 'g' is never cut) */}
+          <span className="block text-[#F58220] pb-2 sm:pb-4 leading-tight">
             {word2.map((char, index) => (
               <motion.span key={`w2-${index}`} variants={textChild} className="inline-block will-change-transform">
                 {char}
@@ -86,7 +88,7 @@ export default function Hero() {
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ delay: 1.8, duration: 1 }}
-        className="absolute bottom-6 sm:bottom-8 left-1/2 -translate-x-1/2 text-white/70 flex flex-col items-center animate-bounce z-40 pointer-events-none will-change-transform"
+        className="absolute bottom-4 sm:bottom-6 left-1/2 -translate-x-1/2 text-white/70 flex flex-col items-center animate-bounce z-40 pointer-events-none will-change-transform"
       >
         <span className="text-[8px] sm:text-[10px] uppercase tracking-widest mb-1 opacity-80">Scroll Down</span>
         <ChevronDown size={18} className="text-[#F58220] sm:w-5 sm:h-5" />

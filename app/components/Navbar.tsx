@@ -79,12 +79,7 @@ export default function Navbar() {
 
   return (
     <>
-      <motion.header
-        initial={{ y: -100, opacity: 0 }}
-        animate={{ y: 0, opacity: 1 }}
-        transition={{ duration: 0.6, ease: "easeOut" }}
-        className="fixed top-0 left-0 right-0 z-50 flex flex-col"
-      >
+      <header className="fixed top-0 left-0 right-0 z-50 flex flex-col">
         {/* --- TOP BAR (#F58220 Orange Background - Sticky) --- */}
         <div
           className="w-full bg-[#F58220] border-b border-black/5 text-white transition-all duration-300 ease-in-out relative z-20 shadow-sm py-2 sm:py-2.5"
@@ -175,7 +170,7 @@ export default function Navbar() {
               className="z-50 flex items-center shrink-0 group mr-4 xl:mr-8 2xl:mr-10"
               onClick={() => { setActivePath('/'); setIsOpen(false); }}
             >
-              <motion.div whileHover={{ scale: 1.02 }} transition={{ duration: 0.3 }} className="will-change-transform flex items-center gap-2.5 sm:gap-3.5 pt-0.5">
+              <div className="flex items-center gap-2.5 sm:gap-3.5 pt-0.5">
                 <Image
                   src="/Logo_Siddhivinayak_Engg_-_Copy.jpg-removebg-preview.png"
                   alt="Siddhivinayak Engineering"
@@ -192,7 +187,7 @@ export default function Navbar() {
                     Engineering
                   </span>
                 </div>
-              </motion.div>
+              </div>
             </Link>
 
             {/* --- 2. CENTER NAVIGATION (DESKTOP) --- */}
@@ -219,11 +214,8 @@ export default function Navbar() {
                           }}
                           className="flex items-center gap-1"
                         >
-                          <motion.span
-                            initial={{ opacity: 0, y: -10 }}
-                            animate={{ opacity: 1, y: 0 }}
-                            transition={{ delay: 0.2 + i * 0.08 }}
-                            className={`text-[13.5px] xl:text-[15px] 2xl:text-[16px] font-bold uppercase tracking-[0.5px] xl:tracking-[1px] transition-colors duration-300 will-change-transform inline-flex items-center gap-1 ${isActive ? 'text-[#F58220]' : 'text-[#0F172A] group-hover:text-[#F58220]'
+                          <span
+                            className={`text-[13.5px] xl:text-[15px] 2xl:text-[16px] font-bold uppercase tracking-[0.5px] xl:tracking-[1px] transition-colors duration-300 inline-flex items-center gap-1 ${isActive ? 'text-[#F58220]' : 'text-[#0F172A] group-hover:text-[#F58220]'
                               }`}
                           >
                             {link.name}
@@ -231,7 +223,7 @@ export default function Navbar() {
                               size={15}
                               className={`transition-transform duration-300 ${productsDropdownOpen ? 'rotate-180 text-[#F58220]' : 'text-slate-400 group-hover:text-[#F58220]'}`}
                             />
-                          </motion.span>
+                          </span>
                           <span className={`absolute bottom-0 h-[2.5px] bg-[#F58220] transition-all duration-300 ease-in-out ${isActive ? 'w-full left-0 rounded-full' : 'w-0 left-1/2 group-hover:w-full group-hover:left-0 rounded-full'
                             }`}></span>
                         </Link>
@@ -301,11 +293,8 @@ export default function Navbar() {
                           }}
                           className="flex items-center gap-1"
                         >
-                          <motion.span
-                            initial={{ opacity: 0, y: -10 }}
-                            animate={{ opacity: 1, y: 0 }}
-                            transition={{ delay: 0.2 + i * 0.08 }}
-                            className={`text-[13.5px] xl:text-[15px] 2xl:text-[16px] font-bold uppercase tracking-[0.5px] xl:tracking-[1px] transition-colors duration-300 will-change-transform inline-flex items-center gap-1 ${isActive ? 'text-[#F58220]' : 'text-[#0F172A] group-hover:text-[#F58220]'
+                          <span
+                            className={`text-[13.5px] xl:text-[15px] 2xl:text-[16px] font-bold uppercase tracking-[0.5px] xl:tracking-[1px] transition-colors duration-300 inline-flex items-center gap-1 ${isActive ? 'text-[#F58220]' : 'text-[#0F172A] group-hover:text-[#F58220]'
                               }`}
                           >
                             {link.name}
@@ -313,7 +302,7 @@ export default function Navbar() {
                               size={15}
                               className={`transition-transform duration-300 ${servicesDropdownOpen ? 'rotate-180 text-[#F58220]' : 'text-slate-400 group-hover:text-[#F58220]'}`}
                             />
-                          </motion.span>
+                          </span>
                           <span className={`absolute bottom-0 h-[2.5px] bg-[#F58220] transition-all duration-300 ease-in-out ${isActive ? 'w-full left-0 rounded-full' : 'w-0 left-1/2 group-hover:w-full group-hover:left-0 rounded-full'
                             }`}></span>
                         </Link>
@@ -374,15 +363,12 @@ export default function Navbar() {
                       onClick={() => setActivePath(link.href)}
                       className="relative group py-2 shrink-0"
                     >
-                      <motion.span
-                        initial={{ opacity: 0, y: -10 }}
-                        animate={{ opacity: 1, y: 0 }}
-                        transition={{ delay: 0.2 + i * 0.08 }}
-                        className={`text-[13.5px] xl:text-[15px] 2xl:text-[16px] font-bold uppercase tracking-[0.5px] xl:tracking-[1px] transition-colors duration-300 will-change-transform inline-block ${isActive ? 'text-[#F58220]' : 'text-[#0F172A] group-hover:text-[#F58220]'
+                      <span
+                        className={`text-[13.5px] xl:text-[15px] 2xl:text-[16px] font-bold uppercase tracking-[0.5px] xl:tracking-[1px] transition-colors duration-300 inline-block ${isActive ? 'text-[#F58220]' : 'text-[#0F172A] group-hover:text-[#F58220]'
                           }`}
                       >
                         {link.name}
-                      </motion.span>
+                      </span>
                       <span className={`absolute bottom-0 h-[2.5px] bg-[#F58220] transition-all duration-300 ease-in-out ${isActive ? 'w-full left-0 rounded-full' : 'w-0 left-1/2 group-hover:w-full group-hover:left-0 rounded-full'
                         }`}></span>
                     </Link>
@@ -393,16 +379,14 @@ export default function Navbar() {
 
             {/* --- 3. RIGHT SIDE ACTIONS (DESKTOP) --- */}
             <div className="hidden lg:flex items-center gap-4 xl:gap-6 shrink-0">
-              <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }} className="will-change-transform">
-                <Link
-                  href="/contact"
-                  onClick={() => { setActivePath('/contact'); setIsOpen(false); }}
-                  className="px-5 xl:px-6 py-2.5 xl:py-3 bg-[#F58220] text-white text-[12px] xl:text-[13px] font-black uppercase tracking-[1.5px] hover:bg-[#0F172A] hover:text-white transition-colors rounded flex items-center gap-2 shadow-lg shadow-orange-900/10"
-                >
-                  Get Quote
-                  <ArrowRight size={16} />
-                </Link>
-              </motion.div>
+              <Link
+                href="/contact"
+                onClick={() => { setActivePath('/contact'); setIsOpen(false); }}
+                className="px-5 xl:px-6 py-2.5 xl:py-3 bg-[#F58220] text-white text-[12px] xl:text-[13px] font-black uppercase tracking-[1.5px] hover:bg-[#0F172A] hover:text-white transition-colors rounded flex items-center gap-2 shadow-lg shadow-orange-900/10"
+              >
+                Get Quote
+                <ArrowRight size={16} />
+              </Link>
             </div>
 
             {/* --- MOBILE TOGGLE BUTTON --- */}
@@ -417,7 +401,7 @@ export default function Navbar() {
             </button>
           </div>
         </nav>
-      </motion.header>
+      </header>
 
       {/* --- MOBILE DRAWER (MATCHING FLUID-TECH SCREENSHOT DESIGN) --- */}
       <AnimatePresence>
